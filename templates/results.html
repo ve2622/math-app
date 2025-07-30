@@ -1,0 +1,6 @@
+{% if correct %}
+    <h3>✅ Bravo, tačan odgovor!</h3>
+{% else %}
+    <h3>❌ Netačno. Nemaš više pokušaja.</h3>
+{% endif %}
+<a href="{{ url_for('student_tasks') }}">⏪ Nazad na zadatke</a>

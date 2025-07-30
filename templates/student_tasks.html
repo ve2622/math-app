@@ -1,0 +1,14 @@
+<h2>Zadaci</h2>
+{% for task in tasks %}
+    <div>
+        {% if task[1] %}
+            <img src="{{ url_for('static', filename='uploads/' + task[1]) }}" width="200"><br>
+        {% endif %}
+        <p>{{ task[2] }}</p>
+        <form method="post" action="{{ url_for('submit_answer', task_id=task[0]) }}">
+            <input type="text" name="answer" required>
+            <button type="submit">Pošalji</button>
+        </form>
+        <hr>
+    </div>
+{% endfor %}
